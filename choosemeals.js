@@ -84,6 +84,8 @@ function mainCtrl ($scope)
         $scope.tomatoes = 0;
         $scope.onions = 0;
         $scope.lettuce = 0;
+
+        $scope.totalServings = 0;
         //groundbeef
 
         $scope.finalList = [];
@@ -95,63 +97,60 @@ function mainCtrl ($scope)
 
             if(x.Item == "Mexican Lasagna II"){
 
-                $scope.finalList.push({Item:"Spaghetti"});
-                $scope.groundBeef += 1;
-                $scope.totalCost += 3.99;
-
-                $scope.spaghetti += 1;
-                $scope.totalCost += 1.50;
-
-                $scope.pastaSauce += 1;
-                $scope.totalCost += 2.50;
+                $scope.finalList.push({Item:"4 Fat free Flour Tortillas"});
+                $scope.finalList.push({Item:"1-1/2 ounces taco seasoning mix"});
+                $scope.finalList.push({Item:"3/4 pound Cheddar cheese"});
+                $scope.finalList.push({Item:"3-1/2 cups refried beans"});
+                $scope.finalList.push({Item:"1 pound lean ground beef"});
+                $scope.finalList.push({Item:"2 green onions"});
+                $scope.finalList.push({Item:"2 roma (plum) tomato"});
+                $scope.totalServings += 8;
+                $scope.totalCost += 12.53;
 
             }
             else if(x.Item == "Shrimp Scampi with Pasta"){
 
                // console.log("\nBurgers" + i);
 
-                $scope.finalList.push({Item:"Burgers"});
-
-                $scope.groundBeef += 1;
-                $scope.totalCost += 3.99;
-
-                $scope.buns += 1;
-                $scope.totalCost += 2;
-
-                $scope.tomatoes += 1;
-                $scope.totalCost += .50;
+                $scope.finalList.push({Item:"16 oz linguine pasta"});
+                $scope.finalList.push({Item:"2 tbsp salted butter"});
+                $scope.finalList.push({Item:"2 tbsp olive oil"});
+                $scope.finalList.push({Item:"2 shallots"});
+                $scope.finalList.push({Item:"2 cloves garlic"});
+                $scope.finalList.push({Item:"1 lb shrimp"});
+                $scope.finalList.push({Item:"1/2 cup dry white wine"});
+                $scope.finalList.push({Item:"1 lemon"});
+                $scope.totalServings += 6;
+                $scope.totalCost += 24.29;
 
             }
             else if(x.Item == "Creamy White Chili"){
 
                 //console.log("\nBurgers" + i);
 
-                $scope.finalList.push({Item:"Burgers"});
-
-                $scope.groundBeef += 1;
-                $scope.totalCost += 3.99;
-
-                $scope.buns += 1;
-                $scope.totalCost += 2;
-
-                $scope.tomatoes += 1;
-                $scope.totalCost += .50;
+                $scope.finalList.push({Item:"1 lb chicken breasts"});
+                $scope.finalList.push({Item:"1 onion"});
+                $scope.finalList.push({Item:"2 cloves garlic"});
+                $scope.finalList.push({Item:"31 oz cans great northern beans"});                
+                $scope.finalList.push({Item:"14.5 oz can chicken broth"});
+                $scope.finalList.push({Item:"8 oz cans chopped green chiles"});
+                $scope.finalList.push({Item:"1 cup sour cream"});
+                $scope.finalList.push({Item:"1/2 cup heavy whipping cream"});
+                $scope.totalServings += 8;
+                $scope.totalCost += 11.28;
 
             }
             else if(x.Item == "Orange, Honey and Soy Chicken"){
 
                 //console.log("\nBurgers" + i);
-
-                $scope.finalList.push({Item:"Burgers"});
-
-                $scope.groundBeef += 1;
-                $scope.totalCost += 3.99;
-
-                $scope.buns += 1;
-                $scope.totalCost += 2;
-
-                $scope.tomatoes += 1;
-                $scope.totalCost += .50;
+                $scope.finalList.push({Item:"2 chicken breasts"});
+                $scope.finalList.push({Item:"2 oranges"});  
+                $scope.finalList.push({Item:"1/4 cup soy sauce"});
+                $scope.finalList.push({Item:"1/4 cup honey"});                
+                $scope.finalList.push({Item:"1 tbsp garlic paste"});
+                $scope.finalList.push({Item:"1 tbsp ginger paste"});
+                $scope.totalServings += 2;
+                $scope.totalCost += 15.56;
 
             }
             
