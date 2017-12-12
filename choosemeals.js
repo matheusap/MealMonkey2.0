@@ -69,6 +69,20 @@ function mainCtrl ($scope)
             }
         });
     };
+    $scope.removeIngredient = function()
+    {
+        var oldCart = $scope.finalList;
+        $scope.cart=[];
+        $scope.total=0;
+        $scope.remaining = $scope.budget;
+        angular.forEach(oldCart,function(x) {
+            if(!x.done){
+                $scope.finalList.push(x);
+                $scope.total += x.price;
+                $scope.remaining = $scope.budget - $scope.total;
+            }
+        });
+    }
     $scope.generateGroceryList = function()
     {
         var meals = $scope.cart;
@@ -105,15 +119,20 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
                         $scope.mealFound = true;
+                        y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Fat free Flour Tortillas"});
+                    $scope.finalList.push({
+                        Item:"Fat free Flour Tortillas", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1
+                                          });
                 }
                 $scope.mealFound = false;
                 
@@ -123,15 +142,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Taco Seasoning Mix"});
+                    $scope.finalList.push({Item:"Taco Seasoning Mix", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -141,15 +162,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Cheddar Cheese"});
+                    $scope.finalList.push({Item:"Cheddar Cheese", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -159,15 +182,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Refried Beans"});
+                    $scope.finalList.push({Item:"Refried Beans", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -177,15 +202,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Lean Ground Beef"});
+                    $scope.finalList.push({Item:"Lean Ground Beef", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -195,15 +222,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Green Onion"});
+                    $scope.finalList.push({Item:"Green Onion", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -213,15 +242,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Roma Tomato"});
+                    $scope.finalList.push({Item:"Roma Tomato", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -237,15 +268,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Linguine Pasta"});
+                    $scope.finalList.push({Item:"Linguine Pasta", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -255,15 +288,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Salted Butter"});
+                    $scope.finalList.push({Item:"Salted Butter", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -273,15 +308,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Olive Oil"});
+                    $scope.finalList.push({Item:"Olive Oil", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -291,15 +328,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Shallots"});
+                    $scope.finalList.push({Item:"Shallots", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -309,15 +348,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Garlic"});
+                    $scope.finalList.push({Item:"Garlic", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -327,15 +368,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Shrimp"});
+                    $scope.finalList.push({Item:"Shrimp", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -345,15 +388,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Dry White Wine"});
+                    $scope.finalList.push({Item:"Dry White Wine", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -363,15 +408,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Lemon"});
+                    $scope.finalList.push({Item:"Lemon", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -387,15 +434,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Chicken Breasts"});
+                    $scope.finalList.push({Item:"Chicken Breasts", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -405,15 +454,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Onion"});
+                    $scope.finalList.push({Item:"Onion", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -423,33 +474,37 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Garlic"});
+                    $scope.finalList.push({Item:"Garlic", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
                 //Ingredient 7
-                $scope.temp = "31 ounce:Great Northern Beans";
+                $scope.temp = "31 ounce:Great Northern Beans"
                 $scope.temp = $scope.temp.split(":");
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Great Northern Beans"});
+                    $scope.finalList.push({Item:"Great Northern Beans", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -459,15 +514,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Chicken Broth"});
+                    $scope.finalList.push({Item:"Chicken Broth", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -477,15 +534,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Chopped Green Chile"});
+                    $scope.finalList.push({Item:"Chopped Green Chile", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -495,15 +554,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Sour Cream"});
+                    $scope.finalList.push({Item:"Sour Cream", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -513,15 +574,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Heavy Whipping Cream"});
+                    $scope.finalList.push({Item:"Heavy Whipping Cream", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -537,15 +600,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Chicken Breasts"});
+                    $scope.finalList.push({Item:"Chicken Breasts", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -555,15 +620,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Orange"});
+                    $scope.finalList.push({Item:"Orange", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -573,15 +640,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Soy Sauce"});
+                    $scope.finalList.push({Item:"Soy Sauce", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -591,15 +660,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Honey"});
+                    $scope.finalList.push({Item:"Honey", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 
@@ -609,16 +680,19 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Garlic Paste"});
+                    $scope.finalList.push({Item:"Garlic Paste", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
+                
                 $scope.mealFound = false;
                 
                 //Ingredient 7
@@ -627,15 +701,17 @@ function mainCtrl ($scope)
                 
                 console.log($scope.temp);
                 angular.forEach($scope.finalList,function(y) {
-                    if(y.Item.split(":")[1] == $scope.temp[1])
+                    if(y.Item == $scope.temp[1])
                     {
-                        $scope.mealFound = true;
+                        $scope.mealFound = true;                         y.Repeats = y.Repeats + 1;
                     }
 
                 })
                 if(!$scope.mealFound)
                 {
-                    $scope.finalList.push({Item:"Ginger Paste"});
+                    $scope.finalList.push({Item:"Ginger Paste", 
+                        Quantity:$scope.temp[0],
+                        Repeats: 1});
                 }
                 $scope.mealFound = false;
                 

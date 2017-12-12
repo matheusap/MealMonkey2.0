@@ -10,31 +10,31 @@
     </head>
     <body class= "bigBody"ng-app='myApp' ng-controller="shoppingCart">
         <header><h1 id="pageTitle" >Pick Your Meals</h1></header>
-        
+
         <h4 id="budgetRemaining">Remaining budgeted amount: ${{remaining}}</h4>
         <div class = "container">
             <div class="your-class">                
                 <button ng-click="addItem('Burrito')">
-                   <div class="slick-slide slide slide--has-caption">
-                    <img src="http://images.media-allrecipes.com/userphotos/600x600/3469050.jpg" width=119% height=251% style="margin-left: -20px; margin-top: -52px; border-radius: 10px;">
-                    <div class="caption">Mexican Lasagna II $12.53</div> </div>
+                    <div class="slick-slide slide slide--has-caption">
+                        <img src="http://images.media-allrecipes.com/userphotos/600x600/3469050.jpg" width=119% height=251% style="margin-left: -20px; margin-top: -52px; border-radius: 10px;">
+                        <div class="caption">Mexican Lasagna II $12.53</div> </div>
                 </button>
                 <button ng-click="addItem('Pasta')">
                     <div class="slick-slide slide slide--has-caption">
-                    <img src="http://images.media-allrecipes.com/userphotos/720x405/2606852.jpg" width=119% height=251% style="margin-left: -20px; margin-top: -52px; border-radius: 10px;">
-                    <div class="caption">Shrimp Scampi with Pasta $24.29</div> </div>
+                        <img src="http://images.media-allrecipes.com/userphotos/720x405/2606852.jpg" width=119% height=251% style="margin-left: -20px; margin-top: -52px; border-radius: 10px;">
+                        <div class="caption">Shrimp Scampi with Pasta $24.29</div> </div>
                 </button>
                 <button ng-click="addItem('Chili')">
                     <div class="slick-slide slide slide--has-caption">
-                    <img src="http://images.media-allrecipes.com/userphotos/720x405/1483386.jpg" width=119% height=251% style="margin-left: -20px; margin-top: -52px; border-radius: 10px;">
-                    <div class="caption">Creamy White Chili $11.28</div> </div>
+                        <img src="http://images.media-allrecipes.com/userphotos/720x405/1483386.jpg" width=119% height=251% style="margin-left: -20px; margin-top: -52px; border-radius: 10px;">
+                        <div class="caption">Creamy White Chili $11.28</div> </div>
                 </button>
             </div>
             <div class="your-class2">
                 <button ng-click="addItem('Chicken')">
                     <div class="slick-slide slide slide--has-caption">
-                    <img src="http://images.media-allrecipes.com/userphotos/720x405/2122115.jpg" width=119% height=251% style="margin-left: -20px; margin-top: -52px; border-radius: 10px;">
-                    <div class="caption">Orange, Honey Chicken $15.56</div> </div>
+                        <img src="http://images.media-allrecipes.com/userphotos/720x405/2122115.jpg" width=119% height=251% style="margin-left: -20px; margin-top: -52px; border-radius: 10px;">
+                        <div class="caption">Orange, Honey Chicken $15.56</div> </div>
                 </button>
                 <button disabled='true'></button>
                 <button disabled='true'></button>
@@ -82,23 +82,26 @@
             <button class="button" ng-click="generateGroceryList()"><a href="#gList">Generate Grocery List</a></button>
         </div>
 
-<br>
-<br>
-<br>
-<br>
-    <div id= "pg2">
-        <div id ="gList">
-            <h1>Grocery List</h1>
-        
-        </div>
         <br>
         <br>
-        <h3 id="gListSub">We have generated this grocery list for you:</h3>
-        <div id="finalDiv" ng-repeat="x in finalList">
-            <span ng-bind="x.Item"></span> 
-        </div>
+        <br>
+        <br>
+        <div id= "pg2">
+            <div id ="gList">
+                <h1>Grocery List</h1>
+
+            </div>
+            <br>
+            <br>
+            <h3 id="gListSub">We have generated this grocery list for you:</h3>
+
+            <div id="finalDiv" ng-repeat="x in finalList">
+                <input type="checkbox" ng-model="x.done"> {{x.Repeats}}x {{x.Quantity}} <span ng-bind="x.Item"></span>
+            </div>
+            <br>
+            <button class="button" ng-click="removeIngredient()">Remove Selected Ingredients</button>
         <h4 id= "totalCost">TOTAL: ${{totalCost}}</h4>
 
-    </div>
+        </div>
     </body>
 </html>
