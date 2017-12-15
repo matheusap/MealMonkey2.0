@@ -71,15 +71,13 @@ function mainCtrl ($scope)
     };
     $scope.removeIngredient = function()
     {
-        var oldCart = $scope.finalList;
-        $scope.cart=[];
-        $scope.total=0;
-        $scope.remaining = $scope.budget;
-        angular.forEach(oldCart,function(x) {
+        var oldList = $scope.finalList;
+        $scope.finalList=[];
+        $scope.totalCost=5;
+        angular.forEach(oldList,function(x) {
             if(!x.done){
                 $scope.finalList.push(x);
-                $scope.total += x.price;
-                $scope.remaining = $scope.budget - $scope.total;
+                $scope.totalCost += 3.50;//Math.round(x.price * 100 / 100);
             }
         });
     }
