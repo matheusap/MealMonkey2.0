@@ -15,7 +15,7 @@ function mainCtrl ($scope)
         if (item == "Burrito")
         {
             $scope.cart.push({Item: "Mexican Lasagna II", price: 12.53, done:false});
-            $scope.total += 12.53;            
+            $scope.total += Math.round(12.53 * 100 / 100);          
             $scope.remaining = Math.round(($scope.budget - $scope.total) * 100 / 100);
             console.log($scope.remaining);
         }
@@ -23,7 +23,7 @@ function mainCtrl ($scope)
         if (item == "Pasta")
         {
             $scope.cart.push({Item: "Shrimp Scampi with Pasta", price: 24.29, done:false});
-            $scope.total += 24.29;
+            $scope.total += Math.round(24.29 * 100 / 100);
 
             $scope.remaining = Math.round(($scope.budget - $scope.total) * 100 / 100);
             console.log($scope.remaining);
@@ -32,7 +32,7 @@ function mainCtrl ($scope)
         if (item == "Chili")
         {
             $scope.cart.push({Item: "Creamy White Chili", price: 11.28, done:false});
-            $scope.total += 11.28;
+            $scope.total += Math.round(11.28 * 100 / 100);
 
             $scope.remaining = Math.round(($scope.budget - $scope.total) * 100 / 100);
             
@@ -42,7 +42,7 @@ function mainCtrl ($scope)
         if (item == "Chicken")
         {
             $scope.cart.push({Item: "Orange, Honey and Soy Chicken", price: 15.56, done:false});
-            $scope.total += 15.56;
+            $scope.total += Math.round(15.56 * 100 / 100);
 
             $scope.remaining = Math.round(($scope.budget - $scope.total) * 100 / 100);
             console.log($scope.remaining);
