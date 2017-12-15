@@ -73,11 +73,12 @@ function mainCtrl ($scope)
     {
         var oldList = $scope.finalList;
         $scope.finalList=[];
-        $scope.totalCost=5;
+        $scope.totalCost=0;
         angular.forEach(oldList,function(x) {
             if(!x.done){
                 $scope.finalList.push(x);
-                $scope.totalCost += 3.50;//Math.round(x.price * 100 / 100);
+                console.log(x.Item.price);
+                $scope.totalCost += x.Price//Math.round(x.price * 100 / 100);
             }
         });
     }
@@ -129,7 +130,8 @@ function mainCtrl ($scope)
                     $scope.finalList.push({
                         Item:"Fat free Flour Tortillas", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1
+                        Repeats: 1,
+                        Price: 2.19
                                           });
                 }
                 $scope.mealFound = false;
@@ -150,7 +152,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Taco Seasoning Mix", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: .89});
                 }
                 $scope.mealFound = false;
                 
@@ -170,7 +173,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Cheddar Cheese", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 4.30});
                 }
                 $scope.mealFound = false;
                 
@@ -190,7 +194,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Refried Beans", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.00});
                 }
                 $scope.mealFound = false;
                 
@@ -210,7 +215,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Lean Ground Beef", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.87});
                 }
                 $scope.mealFound = false;
                 
@@ -230,7 +236,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Green Onion", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 1.00});
                 }
                 $scope.mealFound = false;
                 
@@ -250,12 +257,13 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Roma Tomato", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: .38});
                 }
                 $scope.mealFound = false;
                 
                 $scope.totalServings += 8;
-                $scope.totalCost += 12.53;
+                $scope.totalCost += 13.63;
 
             }
             else if(x.Item == "Shrimp Scampi with Pasta"){
@@ -276,7 +284,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Linguine Pasta", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 1.49});
                 }
                 $scope.mealFound = false;
                 
@@ -296,7 +305,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Salted Butter", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.99});
                 }
                 $scope.mealFound = false;
                 
@@ -316,7 +326,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Olive Oil", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.79});
                 }
                 $scope.mealFound = false;
                 
@@ -336,7 +347,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Shallots", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: .50});
                 }
                 $scope.mealFound = false;
                 
@@ -356,7 +368,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Garlic", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.49});
                 }
                 $scope.mealFound = false;
                 
@@ -376,7 +389,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Shrimp", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 5.99});
                 }
                 $scope.mealFound = false;
                 
@@ -396,7 +410,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Dry White Wine", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.99});
                 }
                 $scope.mealFound = false;
                 
@@ -416,12 +431,13 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Lemon", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: .89});
                 }
                 $scope.mealFound = false;
                 
                 $scope.totalServings += 6;
-                $scope.totalCost += 24.29;
+                $scope.totalCost += 20.13;
 
             }
             else if(x.Item == "Creamy White Chili"){
@@ -442,7 +458,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Chicken Breasts", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 8.76});
                 }
                 $scope.mealFound = false;
                 
@@ -462,7 +479,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Onion", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 1.99});
                 }
                 $scope.mealFound = false;
                 
@@ -482,7 +500,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Garlic", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.49});
                 }
                 $scope.mealFound = false;
                 
@@ -502,7 +521,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Great Northern Beans", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 1.38});
                 }
                 $scope.mealFound = false;
                 
@@ -522,7 +542,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Chicken Broth", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: .50});
                 }
                 $scope.mealFound = false;
                 
@@ -542,7 +563,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Chopped Green Chile", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 1.00});
                 }
                 $scope.mealFound = false;
                 
@@ -562,7 +584,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Sour Cream", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 1.25});
                 }
                 $scope.mealFound = false;
                 
@@ -582,12 +605,14 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Heavy Whipping Cream", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1
+                                          ,
+                        Price: 3.17});
                 }
                 $scope.mealFound = false;
                 
                 $scope.totalServings += 8;
-                $scope.totalCost += 11.28;
+                $scope.totalCost += 20.54;
 
             }
             else if(x.Item == "Orange, Honey and Soy Chicken"){
@@ -608,7 +633,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Chicken Breasts", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 8.76});
                 }
                 $scope.mealFound = false;
                 
@@ -628,7 +654,9 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Orange", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 1.00                   
+                                          });
                 }
                 $scope.mealFound = false;
                 
@@ -648,7 +676,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Soy Sauce", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.19});
                 }
                 $scope.mealFound = false;
                 
@@ -668,7 +697,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Honey", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 3.29});
                 }
                 $scope.mealFound = false;
                 
@@ -688,7 +718,8 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Garlic Paste", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 2.49});
                 }
                 
                 $scope.mealFound = false;
@@ -709,12 +740,13 @@ function mainCtrl ($scope)
                 {
                     $scope.finalList.push({Item:"Ginger Paste", 
                         Quantity:$scope.temp[0],
-                        Repeats: 1});
+                        Repeats: 1,
+                        Price: 3.50});
                 }
                 $scope.mealFound = false;
                 
                 $scope.totalServings += 2;
-                $scope.totalCost += 15.56;
+                $scope.totalCost += 21.22;
 
             }
 
